@@ -1,3 +1,25 @@
 @{
   Layout = "_Layout";
 }
+
+<div class="jumbotron">
+  <h1>DO REPLACE TO THE THING</h1>
+</div>
+
+<form action="/result" method="post">
+  <div class="form-group">
+    <label for="sentence">Enter a sentence:</label>
+    <input class="form-control" id="sentence" name="sentence" type="text">
+  </div>
+  <div class="form-group">
+    <label for="replaced-word">Enter a word to replace:</label>
+    <input class="form-control" id="replaced-word" name="replaced-word" type="text">
+  </div>
+  <div class="form-group">
+    <label for="new-word">Enter a word to replace with:</label>
+    <input class="form-control" id="new-word" name="new-word" type="text">
+  </div>
+  <button class="btn" type="submit" name="button">DO IT!</button>
+</form>
+
+@Html.Partial("Output")

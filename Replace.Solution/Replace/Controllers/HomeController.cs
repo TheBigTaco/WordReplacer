@@ -10,7 +10,17 @@ namespace Replace.Controllers
       [HttpGet("/")]
       public ActionResult Index()
       {
-        return View();
+        return View("Index", WordReplacer.LastOutput);
+      }
+
+      [HttpPost("/result")]
+      public ActionResult Result()
+      {
+        string sentence = Request.Form["sentence"];
+        string replacedWord = Request.Form["replaced-word"];
+        string newWord = Request.Form["new-word"];
+        WordReplacer.Replace(sentence, replacedWord, newWord);
+        return Redirect("/");
       }
     }
 }
